@@ -11,7 +11,7 @@ public class TestScript1 : MonoBehaviour
     #region Variables
 
     #region Booleans
-
+    bool Test;
     #endregion
 
     #region Vectors And Transforms
