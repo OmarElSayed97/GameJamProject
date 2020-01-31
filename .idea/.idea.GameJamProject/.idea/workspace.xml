@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dde2e77-0ec9-4ff2-9b8d-e852db322b7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/3rd-Party/Filler.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3rd-Party/Filler.txt.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Filler.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Filler.txt.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJamProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sandboxes/Sama.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Sandboxes/Sama.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,13 +13,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/TestScript1.cs">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            <state>
               <folding>
-                <element signature="e#0#78#0" expanded="true" />
+                <marker date="1580475893130" expanded="false" signature="6:78" ph="..." />
+                <marker date="1580475893130" expanded="true" signature="125:1787" ph="{...}" />
+                <marker date="1580475893130" expanded="false" signature="132:165" ph="Singleton" />
+                <marker date="1580475893130" expanded="true" signature="171:796" ph="Variables" />
+                <marker date="1580475893130" expanded="false" signature="194:226" ph="Booleans" />
+                <marker date="1580475893130" expanded="false" signature="232:329" ph="Vectors And Transforms" />
+                <marker date="1580475893130" expanded="false" signature="335:377" ph="Integers And Floats" />
+                <marker date="1580475893130" expanded="false" signature="383:423" ph="Strings And Enums" />
+                <marker date="1580475893130" expanded="false" signature="429:457" ph="Lists" />
+                <marker date="1580475893130" expanded="false" signature="463:505" ph="Public GameObjects" />
+                <marker date="1580475893130" expanded="false" signature="511:553" ph="Private GameObjects" />
+                <marker date="1580475893130" expanded="false" signature="559:592" ph="UIElements" />
+                <marker date="1580475893130" expanded="true" signature="598:780" ph="Others" />
+                <marker date="1580475893130" expanded="false" signature="803:1145" ph="Main Methods" />
+                <marker date="1580475893130" expanded="true" signature="893:943" ph="{...}" />
+                <marker date="1580475893130" expanded="true" signature="1001:1130" ph="{...}" />
+                <marker date="1580475893130" expanded="true" signature="1064:1124" ph="{...}" />
+                <marker date="1580475893130" expanded="false" signature="1151:1678" ph="Methods" />
+                <marker date="1580475893130" expanded="true" signature="1182:1384" ph="{...}" />
+                <marker date="1580475893130" expanded="true" signature="1234:1378" ph="{...}" />
+                <marker date="1580475893130" expanded="true" signature="1412:1663" ph="{...}" />
+                <marker date="1580475893130" expanded="true" signature="1474:1657" ph="{...}" />
+                <marker date="1580475893130" expanded="false" signature="1684:1729" ph="Collisons And Triggers" />
+                <marker date="1580475893130" expanded="false" signature="1735:1768" ph="Coroutines" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
+              <folding>
+                <marker date="1580475893117" expanded="true" signature="61:1518" ph="{...}" />
+                <marker date="1580475893117" expanded="false" signature="69:102" ph="Singleton" />
+                <marker date="1580475893117" expanded="false" signature="108:667" ph="Variables" />
+                <marker date="1580475893117" expanded="false" signature="131:163" ph="Booleans" />
+                <marker date="1580475893117" expanded="false" signature="169:308" ph="Vectors And Transforms" />
+                <marker date="1580475893117" expanded="false" signature="314:402" ph="Integers And Floats" />
+                <marker date="1580475893117" expanded="false" signature="408:448" ph="Strings And Enums" />
+                <marker date="1580475893117" expanded="false" signature="454:482" ph="Lists" />
+                <marker date="1580475893117" expanded="false" signature="488:529" ph="Public GameObjects" />
+                <marker date="1580475893117" expanded="false" signature="535:577" ph="Private GameObjects" />
+                <marker date="1580475893117" expanded="false" signature="583:616" ph="UIElements" />
+                <marker date="1580475893117" expanded="false" signature="622:651" ph="Others" />
+                <marker date="1580475893117" expanded="false" signature="674:947" ph="Main Methods" />
+                <marker date="1580475893117" expanded="true" signature="764:777" ph="{...}" />
+                <marker date="1580475893117" expanded="true" signature="835:873" ph="{...}" />
+                <marker date="1580475893117" expanded="true" signature="896:932" ph="{...}" />
+                <marker date="1580475893117" expanded="true" signature="953:1406" ph="Methods" />
+                <marker date="1580475893117" expanded="true" signature="993:1271" ph="{...}" />
+                <marker date="1580475893117" expanded="true" signature="1307:1391" ph="{...}" />
+                <marker date="1580475893117" expanded="false" signature="1412:1457" ph="Collisons And Triggers" />
+                <marker date="1580475893117" expanded="false" signature="1463:1496" ph="Coroutines" />
               </folding>
             </state>
           </provider>
@@ -30,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/SampleScript.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="604">
-              <caret line="67" lean-forward="true" selection-start-line="6" selection-end-line="67" />
+              <caret line="67" selection-start-line="6" selection-end-line="67" />
             </state>
           </provider>
         </entry>
@@ -41,8 +94,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SampleScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/TestScript1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -127,12 +181,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580479263007</updated>
-      <workItem from="1580479279854" duration="111000" />
+      <workItem from="1580479279854" duration="942000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111000" />
+    <option name="totallyTimeSpent" value="942000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -191,16 +245,75 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/SampleScript.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="604">
-          <caret line="67" lean-forward="true" selection-start-line="6" selection-end-line="67" />
+          <caret line="67" selection-start-line="6" selection-end-line="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/TestScript1.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
+        <state relative-caret-position="306">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
+            <marker date="1580475893130" expanded="false" signature="6:78" ph="..." />
+            <marker date="1580475893130" expanded="true" signature="125:1787" ph="{...}" />
+            <marker date="1580475893130" expanded="false" signature="132:165" ph="Singleton" />
+            <marker date="1580475893130" expanded="true" signature="171:796" ph="Variables" />
+            <marker date="1580475893130" expanded="false" signature="194:226" ph="Booleans" />
+            <marker date="1580475893130" expanded="false" signature="232:329" ph="Vectors And Transforms" />
+            <marker date="1580475893130" expanded="false" signature="335:377" ph="Integers And Floats" />
+            <marker date="1580475893130" expanded="false" signature="383:423" ph="Strings And Enums" />
+            <marker date="1580475893130" expanded="false" signature="429:457" ph="Lists" />
+            <marker date="1580475893130" expanded="false" signature="463:505" ph="Public GameObjects" />
+            <marker date="1580475893130" expanded="false" signature="511:553" ph="Private GameObjects" />
+            <marker date="1580475893130" expanded="false" signature="559:592" ph="UIElements" />
+            <marker date="1580475893130" expanded="true" signature="598:780" ph="Others" />
+            <marker date="1580475893130" expanded="false" signature="803:1145" ph="Main Methods" />
+            <marker date="1580475893130" expanded="true" signature="893:943" ph="{...}" />
+            <marker date="1580475893130" expanded="true" signature="1001:1130" ph="{...}" />
+            <marker date="1580475893130" expanded="true" signature="1064:1124" ph="{...}" />
+            <marker date="1580475893130" expanded="false" signature="1151:1678" ph="Methods" />
+            <marker date="1580475893130" expanded="true" signature="1182:1384" ph="{...}" />
+            <marker date="1580475893130" expanded="true" signature="1234:1378" ph="{...}" />
+            <marker date="1580475893130" expanded="true" signature="1412:1663" ph="{...}" />
+            <marker date="1580475893130" expanded="true" signature="1474:1657" ph="{...}" />
+            <marker date="1580475893130" expanded="false" signature="1684:1729" ph="Collisons And Triggers" />
+            <marker date="1580475893130" expanded="false" signature="1735:1768" ph="Coroutines" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <marker date="1580475893117" expanded="true" signature="61:1518" ph="{...}" />
+            <marker date="1580475893117" expanded="false" signature="69:102" ph="Singleton" />
+            <marker date="1580475893117" expanded="false" signature="108:667" ph="Variables" />
+            <marker date="1580475893117" expanded="false" signature="131:163" ph="Booleans" />
+            <marker date="1580475893117" expanded="false" signature="169:308" ph="Vectors And Transforms" />
+            <marker date="1580475893117" expanded="false" signature="314:402" ph="Integers And Floats" />
+            <marker date="1580475893117" expanded="false" signature="408:448" ph="Strings And Enums" />
+            <marker date="1580475893117" expanded="false" signature="454:482" ph="Lists" />
+            <marker date="1580475893117" expanded="false" signature="488:529" ph="Public GameObjects" />
+            <marker date="1580475893117" expanded="false" signature="535:577" ph="Private GameObjects" />
+            <marker date="1580475893117" expanded="false" signature="583:616" ph="UIElements" />
+            <marker date="1580475893117" expanded="false" signature="622:651" ph="Others" />
+            <marker date="1580475893117" expanded="false" signature="674:947" ph="Main Methods" />
+            <marker date="1580475893117" expanded="true" signature="764:777" ph="{...}" />
+            <marker date="1580475893117" expanded="true" signature="835:873" ph="{...}" />
+            <marker date="1580475893117" expanded="true" signature="896:932" ph="{...}" />
+            <marker date="1580475893117" expanded="true" signature="953:1406" ph="Methods" />
+            <marker date="1580475893117" expanded="true" signature="993:1271" ph="{...}" />
+            <marker date="1580475893117" expanded="true" signature="1307:1391" ph="{...}" />
+            <marker date="1580475893117" expanded="false" signature="1412:1457" ph="Collisons And Triggers" />
+            <marker date="1580475893117" expanded="false" signature="1463:1496" ph="Coroutines" />
           </folding>
         </state>
       </provider>
