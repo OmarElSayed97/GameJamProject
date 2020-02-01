@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -37,6 +38,7 @@ public class BlackHoleController : MonoBehaviour
     #endregion
 
     #region UIElements
+    
     #endregion
 
     #region Others
@@ -49,7 +51,6 @@ public class BlackHoleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
     }
 
     // Update is called once per frame
@@ -61,13 +62,7 @@ public class BlackHoleController : MonoBehaviour
 
     #region Methods
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("EnemyParts"))
-        {
-            Destroy(other.gameObject);
-        }
-    }
+   
 
     #endregion
 
@@ -107,12 +102,19 @@ public class BlackHoleController : MonoBehaviour
             }
         }
     }
-
-    private void AbsorbEnergy()
-    {
-        
-    }
+    
     #region Collisons And Triggers
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemyParts"))
+        {
+            int life = int.Parse(GameManager._LifeSource.text);
+            life += 5;
+            GameManager._LifeSource.text = life + "";
+            Destroy(other.gameObject);
+        }
+    }
     #endregion
 
     #region Coroutines

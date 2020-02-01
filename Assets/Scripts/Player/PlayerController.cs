@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using  UnityEngine.EventSystems;
 
@@ -64,6 +65,8 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region UIElements
+    [SerializeField]
+    private TextMeshProUGUI ui_LifeText;
     #endregion
 
     #region Others
@@ -85,6 +88,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         BulletsPool.InitializePool();
+        ui_LifeText.text = 0 + "";
         l_Weapons = new Weapon[3];
         l_Weapons[0] = Weapon.LASER;
         l_Weapons[1] = Weapon.BLACKHOLE;
@@ -98,7 +102,8 @@ public class PlayerController : MonoBehaviour
         {
             if(CurrentWeapon == Weapon.LASER)
                 Fire();
-            if (CurrentWeapon == Weapon.BLACKHOLE)
+            //TO BE CHANGED
+//            if (CurrentWeapon == Weapon.BLACKHOLE)
                 ReleaseBlackHole();
             if (CurrentWeapon == Weapon.TELEPORT)
                 Teleport();
@@ -122,7 +127,8 @@ public class PlayerController : MonoBehaviour
 
     void ReleaseBlackHole()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        //TO BE CHANGED
+        if (Input.GetKey(KeyCode.Mouse1))
         {
             if (!go_InstantiatedBlackHole)
             {
@@ -195,7 +201,7 @@ public class PlayerController : MonoBehaviour
 
     void NumberofEnemiesAroundPlayer()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.8f);
+        Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale/2);
 
         for (int i = 0; i < hitColliders.Length; i++)
         {

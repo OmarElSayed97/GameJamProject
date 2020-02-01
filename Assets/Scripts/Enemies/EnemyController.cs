@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -74,9 +75,9 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region Collisons And Triggers
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet"))
         {
             i_BulletsTaken++;
             
@@ -88,6 +89,7 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     #endregion
 
     #region Coroutines
