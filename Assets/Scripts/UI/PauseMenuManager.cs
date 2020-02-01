@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -76,7 +74,7 @@ public class PauseMenuManager : MonoBehaviour
     public void onClickResume()
     {
         go_PauseMenuCanvas.SetActive(false);
-        Time.timeScale = 1;
+            Time.timeScale = 1;
     }
     
     public void onClickRestart()

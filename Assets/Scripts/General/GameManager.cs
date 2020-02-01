@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class StartMenuManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+   
     #region Singleton
 
     #endregion
@@ -30,20 +30,18 @@ public class StartMenuManager : MonoBehaviour
     #endregion
 
     #region Public GameObjects
-
-   
-
     [SerializeField] 
-    private GameObject go_CreditsCanvas;
-    
-    [SerializeField]
-    private GameObject go_LoadingScreenPrefab;
+    private GameObject go_LifeSourceGO;
+
+    public static TextMeshProUGUI _LifeSource;
     #endregion
 
     #region Private GameObjects
     #endregion
 
     #region UIElements
+
+    
     #endregion
 
     #region Others
@@ -53,25 +51,21 @@ public class StartMenuManager : MonoBehaviour
 
 
     #region Main Methods
+    // Start is called before the first frame update
+    void Start()
+    {
+        _LifeSource = go_LifeSourceGO.GetComponent<TextMeshProUGUI>();
+        _LifeSource.text = 0 + "";
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
     #endregion
 
     #region Methods
-    
-    public void onClickStart()
-    {
-        go_LoadingScreenPrefab.SetActive(true);
-    }
-    
-    public void onClickCredits()
-    {
-        gameObject.SetActive(false);
-        go_CreditsCanvas.SetActive(true);
-    }
-    public void onClickQuit()
-    {
-        Application.Quit();
-    }
-  
     #endregion
 
     #region Collisons And Triggers
