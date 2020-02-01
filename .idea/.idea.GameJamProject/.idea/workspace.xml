@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4dde2e77-0ec9-4ff2-9b8d-e852db322b7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJamProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJamProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Basic Colors/Metal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Basic Colors/Metal.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sandboxes/Sama.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Sandboxes/Sama.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="4dde2e77-0ec9-4ff2-9b8d-e852db322b7d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/BlackHoleController.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="502">
@@ -87,6 +80,39 @@
                 <marker date="1580499617618" expanded="true" signature="1338:1552" ph="{...}" />
                 <marker date="1580499617618" expanded="true" signature="1573:1618" ph="Collisons And Triggers" />
                 <marker date="1580499617618" expanded="true" signature="1624:1657" ph="Coroutines" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
+              <folding>
+                <marker date="1580540685626" expanded="false" signature="6:100" ph="..." />
+                <marker date="1580540685626" expanded="true" signature="146:1459" ph="{...}" />
+                <marker date="1580540685626" expanded="false" signature="154:187" ph="Singleton" />
+                <marker date="1580540685626" expanded="true" signature="193:702" ph="Variables" />
+                <marker date="1580540685626" expanded="false" signature="216:248" ph="Booleans" />
+                <marker date="1580540685626" expanded="true" signature="254:352" ph="Vectors And Transforms" />
+                <marker date="1580540685626" expanded="false" signature="358:400" ph="Integers And Floats" />
+                <marker date="1580540685626" expanded="false" signature="406:446" ph="Strings And Enums" />
+                <marker date="1580540685626" expanded="false" signature="452:480" ph="Lists" />
+                <marker date="1580540685626" expanded="false" signature="486:529" ph="Public GameObjects" />
+                <marker date="1580540685626" expanded="false" signature="535:577" ph="Private GameObjects" />
+                <marker date="1580540685626" expanded="false" signature="583:616" ph="UIElements" />
+                <marker date="1580540685626" expanded="false" signature="622:686" ph="Others" />
+                <marker date="1580540685626" expanded="true" signature="709:1101" ph="Main Methods" />
+                <marker date="1580540685626" expanded="true" signature="799:886" ph="{...}" />
+                <marker date="1580540685626" expanded="true" signature="944:1086" ph="{...}" />
+                <marker date="1580540685626" expanded="true" signature="988:1072" ph="{...}" />
+                <marker date="1580540685626" expanded="false" signature="1107:1137" ph="Methods" />
+                <marker date="1580540685626" expanded="false" signature="1143:1414" ph="Collisons And Triggers" />
+                <marker date="1580540685626" expanded="true" signature="1228:1399" ph="{...}" />
+                <marker date="1580540685626" expanded="true" signature="1287:1393" ph="{...}" />
+                <marker date="1580540685626" expanded="false" signature="1420:1457" ph="Coroutines" />
               </folding>
             </state>
           </provider>
@@ -197,6 +223,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SampleScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -209,6 +236,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/General/TestScript1.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/BlackHoleController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
       </list>
     </option>
   </component>
@@ -220,7 +248,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="270" />
     <option name="y" value="250" />
     <option name="width" value="1280" />
@@ -288,12 +316,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580479263007</updated>
-      <workItem from="1580479279854" duration="9311000" />
+      <workItem from="1580479279854" duration="9627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9311000" />
+    <option name="totallyTimeSpent" value="9627000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -305,7 +333,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -511,6 +539,37 @@
             <marker date="1580499617618" expanded="true" signature="1338:1552" ph="{...}" />
             <marker date="1580499617618" expanded="true" signature="1573:1618" ph="Collisons And Triggers" />
             <marker date="1580499617618" expanded="true" signature="1624:1657" ph="Coroutines" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <marker date="1580540685626" expanded="false" signature="6:100" ph="..." />
+            <marker date="1580540685626" expanded="true" signature="146:1459" ph="{...}" />
+            <marker date="1580540685626" expanded="false" signature="154:187" ph="Singleton" />
+            <marker date="1580540685626" expanded="true" signature="193:702" ph="Variables" />
+            <marker date="1580540685626" expanded="false" signature="216:248" ph="Booleans" />
+            <marker date="1580540685626" expanded="true" signature="254:352" ph="Vectors And Transforms" />
+            <marker date="1580540685626" expanded="false" signature="358:400" ph="Integers And Floats" />
+            <marker date="1580540685626" expanded="false" signature="406:446" ph="Strings And Enums" />
+            <marker date="1580540685626" expanded="false" signature="452:480" ph="Lists" />
+            <marker date="1580540685626" expanded="false" signature="486:529" ph="Public GameObjects" />
+            <marker date="1580540685626" expanded="false" signature="535:577" ph="Private GameObjects" />
+            <marker date="1580540685626" expanded="false" signature="583:616" ph="UIElements" />
+            <marker date="1580540685626" expanded="false" signature="622:686" ph="Others" />
+            <marker date="1580540685626" expanded="true" signature="709:1101" ph="Main Methods" />
+            <marker date="1580540685626" expanded="true" signature="799:886" ph="{...}" />
+            <marker date="1580540685626" expanded="true" signature="944:1086" ph="{...}" />
+            <marker date="1580540685626" expanded="true" signature="988:1072" ph="{...}" />
+            <marker date="1580540685626" expanded="false" signature="1107:1137" ph="Methods" />
+            <marker date="1580540685626" expanded="false" signature="1143:1414" ph="Collisons And Triggers" />
+            <marker date="1580540685626" expanded="true" signature="1228:1399" ph="{...}" />
+            <marker date="1580540685626" expanded="true" signature="1287:1393" ph="{...}" />
+            <marker date="1580540685626" expanded="false" signature="1420:1457" ph="Coroutines" />
           </folding>
         </state>
       </provider>
