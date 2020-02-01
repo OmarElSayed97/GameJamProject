@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class LifeSourceController : MonoBehaviour
 {
 
     #region Singleton
@@ -17,12 +16,10 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region Vectors And Transforms
-    [HideInInspector]
-    public Transform t_Target;
+
     #endregion
 
     #region Integers And Floats
-    private int i_BulletsTaken = 0;
     #endregion
 
     #region Strings And Enums
@@ -32,9 +29,6 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region Public GameObjects
-    [SerializeField]
-    GameObject go_LifeSource;
-
     #endregion
 
     #region Private GameObjects
@@ -44,7 +38,6 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region Others
-    NavMeshAgent agt_CurrentAgent;
     #endregion
 
     #endregion
@@ -54,18 +47,13 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agt_CurrentAgent = GetComponent<NavMeshAgent>();
-        
-        
+        GetComponent<Rigidbody>().AddForce(new Vector3(1,1,1) * 0.03f,ForceMode.Impulse);
+        Destroy(gameObject, 5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (agt_CurrentAgent.enabled)
-        {
-            agt_CurrentAgent.SetDestination(t_Target.position);
-        }
        
     }
     #endregion
@@ -74,24 +62,8 @@ public class EnemyController : MonoBehaviour
     #endregion
 
     #region Collisons And Triggers
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Bullet"))
-        {
-            i_BulletsTaken++;
-            
-        }
-        if(i_BulletsTaken == 2)
-        {
-            GameObject obj = Instantiate(go_LifeSource, transform.position, Quaternion.identity);
-            //agt_CurrentAgent.enabled = false;
-            Destroy(gameObject);
-        }
-    }
     #endregion
 
     #region Coroutines
-
-  
     #endregion
 }

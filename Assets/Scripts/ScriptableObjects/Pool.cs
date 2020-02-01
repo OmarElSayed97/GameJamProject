@@ -45,6 +45,29 @@ public class Pool : ScriptableObject
     }
 
 
+    public void SpawnDoubleShoot(Transform spawner1, Transform spawner2, int speed)
+    {
+        GameObject obj1 = l_ObjectPool.Dequeue();
+        GameObject obj2 = l_ObjectPool.Dequeue();
+
+        obj1.SetActive(true);
+        obj1.transform.position = spawner1.position;
+        obj1.transform.rotation = spawner1.rotation;
+        Rigidbody rb1 = obj1.GetComponent<Rigidbody>();
+        rb1.WakeUp();
+        rb1.AddForce(spawner1.forward * speed);
+
+        obj2.SetActive(true);
+        obj2.transform.position = spawner2.position;
+        obj2.transform.rotation = spawner2.rotation;
+        Rigidbody rb2 = obj2.GetComponent<Rigidbody>();
+        rb2.WakeUp();
+        rb2.AddForce(spawner2.forward * speed);
+
+        l_ObjectPool.Enqueue(obj2);
+    }
+
+
     public void ThrowIntoPool(GameObject obj)
     {
         obj.SetActive(false);

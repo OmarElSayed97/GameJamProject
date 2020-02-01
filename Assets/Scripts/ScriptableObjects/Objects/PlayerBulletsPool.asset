@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e585c4cbfb4389b48821610ecbf8bc4b, type: 3}
   m_Name: PlayerBulletsPool
   m_EditorClassIdentifier: 
-  i_PoolAmount: 50
-  go_ObjectPrefab: {fileID: 4845085997826008428, guid: f05ffaf4d1235a6429dfd02f16153180,
+  i_PoolAmount: 300
+  go_ObjectPrefab: {fileID: 4375476476632377620, guid: f0d4e2addbdc7b24ca37b1d0f38c72af,
     type: 3}
