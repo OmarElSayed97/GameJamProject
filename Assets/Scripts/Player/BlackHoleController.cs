@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
@@ -15,6 +16,8 @@ public class BlackHoleController : MonoBehaviour
 
     #region Booleans
 
+    private bool isEmitting;
+
     #endregion
 
     #region Vectors And Transforms
@@ -22,6 +25,10 @@ public class BlackHoleController : MonoBehaviour
     #endregion
 
     #region Integers And Floats
+
+    private int i_PlayerLife;
+    private int i_PlanetLife;
+    
     
     #endregion
 
@@ -57,15 +64,11 @@ public class BlackHoleController : MonoBehaviour
     void Update()
     {
         AttractEnemies();
+        GiveLife();
     }
     #endregion
 
     #region Methods
-
-   
-
-    #endregion
-
     private void AttractEnemies()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f);
@@ -102,6 +105,28 @@ public class BlackHoleController : MonoBehaviour
             }
         }
     }
+
+    private void GiveLife()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f);
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i].CompareTag("Planet"))
+            {
+                TextMeshProUGUI planetText = hitColliders[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+                i_PlanetLife= int.Parse(planetText.text);
+                i_PlayerLife =  int.Parse(GameManager._LifeSource.text);
+                if (!isEmitting)
+                {
+                    StartCoroutine(WaitWhileEmitting(planetText));
+                }
+            }
+        }
+    }
+
+    #endregion
+
+   
     
     #region Collisons And Triggers
 
@@ -109,15 +134,29 @@ public class BlackHoleController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyParts"))
         {
-            int life = int.Parse(GameManager._LifeSource.text);
-            life += 5;
-            GameManager._LifeSource.text = life + "";
+            int totalLife = int.Parse(GameManager._LifeSource.text);
+            totalLife += 5;
+            GameManager._LifeSource.text = totalLife + "";
             Destroy(other.gameObject);
         }
     }
     #endregion
 
     #region Coroutines
+
+    IEnumerator WaitWhileEmitting(TextMeshProUGUI lifeText)
+    {
+        isEmitting = true;
+        yield return new WaitForSeconds(0.1f);
+        if (i_PlayerLife >= 5)
+        {
+            i_PlanetLife += 5;
+            i_PlayerLife -= 5;
+        }
+        GameManager._LifeSource.text = i_PlayerLife.ToString();
+        lifeText.text = i_PlanetLife.ToString();
+        isEmitting = false;
+    }
     #endregion
 
 }

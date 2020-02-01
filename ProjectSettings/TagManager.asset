@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - EnemyAttracted
   - Fall
+  - Planet
   layers:
   - Default
   - TransparentFX

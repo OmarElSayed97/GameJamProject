@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!EventSystem.current.IsPointerOverGameObject())
+       if (!EventSystem.current.IsPointerOverGameObject())
         {
             if(CurrentWeapon == Weapon.LASER)
                 Fire();
