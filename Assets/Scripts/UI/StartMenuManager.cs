@@ -57,7 +57,7 @@ public class StartMenuManager : MonoBehaviour
 
     #region Methods
     
-    public void onClickStart(int SceneIndex)
+    public void onClickStart()
     {
         go_LoadingScreenPrefab.SetActive(true);
     }

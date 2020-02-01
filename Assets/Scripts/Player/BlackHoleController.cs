@@ -107,6 +107,11 @@ public class BlackHoleController : MonoBehaviour
             }
         }
     }
+
+    private void AbsorbEnergy()
+    {
+        
+    }
     #region Collisons And Triggers
     #endregion
 

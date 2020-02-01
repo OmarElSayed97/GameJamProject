@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using  UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private float f_TeleportOffsetVertical;
 
     private int i_CurrentWeaponIndex;
+    private int i_EnemyHitting = 0;
     #endregion
 
     #region Strings And Enums
@@ -89,14 +92,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(CurrentWeapon == Weapon.LASER)
-            Fire();
-        if (CurrentWeapon == Weapon.BLACKHOLE)
-            ReleaseBlackHole();
-        if (CurrentWeapon == Weapon.TELEPORT)
-            Teleport();
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            if(CurrentWeapon == Weapon.LASER)
+                Fire();
+            if (CurrentWeapon == Weapon.BLACKHOLE)
+                ReleaseBlackHole();
+            if (CurrentWeapon == Weapon.TELEPORT)
+                Teleport();
 
-        SwitchWeapon();
+            SwitchWeapon();
+            NumberofEnemiesAroundPlayer();
+        }
+      
     }
     #endregion
 
@@ -183,9 +191,29 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    void NumberofEnemiesAroundPlayer()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.8f);
+
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i].CompareTag("Enemy"))
+            {
+                i_EnemyHitting++;
+            }
+        }
+        if (hitColliders.Length >= 3 && i_EnemyHitting >= 3)
+        {
+            gameObject.SetActive(false);
+        }
+
+        i_EnemyHitting = 0;
+    }
+
     #endregion
 
     #region Collisons And Triggers
+
     #endregion
 
     #region Coroutines
