@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 34282680}
   - component: {fileID: 34282679}
   - component: {fileID: 34282678}
-  - component: {fileID: 34282677}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: EnemyParts
@@ -253,28 +252,6 @@ Transform:
   m_Father: {fileID: 4601305}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &34282677
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34282675}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5000038
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.99999714
-  m_BaseOffset: 0.49999857
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &34282678
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -856,7 +833,6 @@ GameObject:
   - component: {fileID: 906214241}
   - component: {fileID: 906214240}
   - component: {fileID: 906214239}
-  - component: {fileID: 906214238}
   m_Layer: 0
   m_Name: Cube
   m_TagString: EnemyParts
@@ -878,28 +854,6 @@ Transform:
   m_Father: {fileID: 4601305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &906214238
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906214236}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.99999714
-  m_BaseOffset: 0.49999857
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &906214239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -988,6 +942,7 @@ GameObject:
   - component: {fileID: 1060172271}
   - component: {fileID: 1060172270}
   - component: {fileID: 1060172269}
+  - component: {fileID: 1060172273}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -1084,6 +1039,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060172267}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!195 &1060172273
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060172267}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1157239428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,7 +1167,6 @@ GameObject:
   - component: {fileID: 1547474593}
   - component: {fileID: 1547474592}
   - component: {fileID: 1547474591}
-  - component: {fileID: 1547474590}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: EnemyParts
@@ -1212,28 +1188,6 @@ Transform:
   m_Father: {fileID: 4601305}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &1547474590
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547474588}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.99999714
-  m_BaseOffset: 0.49999857
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &1547474591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1352,7 +1306,6 @@ GameObject:
   - component: {fileID: 1842337029}
   - component: {fileID: 1842337028}
   - component: {fileID: 1842337027}
-  - component: {fileID: 1842337026}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: EnemyParts
@@ -1374,28 +1327,6 @@ Transform:
   m_Father: {fileID: 4601305}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &1842337026
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842337024}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.99999714
-  m_BaseOffset: 0.49999857
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &1842337027
 Rigidbody:
   m_ObjectHideFlags: 0
