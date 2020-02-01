@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
 
     #region Vectors And Transforms
     [SerializeField]
-    Transform t_BulletSpawner;
+    Transform t_BulletSpawner1;
+    [SerializeField]
+    Transform t_BulletSpawner2;
     #endregion
 
     #region Integers And Floats
@@ -105,7 +107,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            BulletsPool.SpawnFromPool(t_BulletSpawner, 1000);
+            BulletsPool.SpawnDoubleShoot(t_BulletSpawner1,t_BulletSpawner2, 3000);
             StartCoroutine(ShakingCamera.Shake(0.2f, 0.05f));
         }
     }
