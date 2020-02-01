@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     #region Integers And Floats
     [SerializeField]
     float f_Speed = 5;
+
+    private int i_ImaginaryPlaneFloormask;
     #endregion
 
     #region Strings And Enums
@@ -49,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb_PlayerRigidBody = GetComponent<Rigidbody>();
+        i_ImaginaryPlaneFloormask = LayerMask.GetMask("ImaginaryPlane");
     }
  
     // Update is called once per frame
@@ -80,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit floorHit;
 
-        if (Physics.Raycast(camRay, out floorHit, 100, 1))
+        if (Physics.Raycast(camRay, out floorHit, 200, i_ImaginaryPlaneFloormask))
         {
             Vector3 playerToMouse = floorHit.point - transform.position;
             playerToMouse.y = 0f;
