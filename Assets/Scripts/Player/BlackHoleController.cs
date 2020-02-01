@@ -28,8 +28,8 @@ public class BlackHoleController : MonoBehaviour
 
     private int i_PlayerLife;
     private int i_PlanetLife;
-    
-    
+
+
     #endregion
 
     #region Strings And Enums
@@ -45,10 +45,11 @@ public class BlackHoleController : MonoBehaviour
     #endregion
 
     #region UIElements
-    
+
     #endregion
 
     #region Others
+  
     #endregion
 
     #endregion
@@ -58,6 +59,7 @@ public class BlackHoleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
     }
 
     // Update is called once per frame
@@ -101,24 +103,27 @@ public class BlackHoleController : MonoBehaviour
             else if (hitColliders[i].CompareTag("EnemyParts"))
             {
                 Transform part = hitColliders[i].transform;
-                part.position = Vector3.MoveTowards(part.position, transform.position, 2f * Time.deltaTime);
+                part.position = Vector3.MoveTowards(part.position, transform.position, 4f * Time.deltaTime);
             }
         }
     }
 
     private void GiveLife()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f);
+       
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 20f);
         for (int i = 0; i < hitColliders.Length; i++)
         {
             if (hitColliders[i].CompareTag("Planet"))
             {
-                TextMeshProUGUI planetText = hitColliders[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                i_PlanetLife= int.Parse(planetText.text);
-                i_PlayerLife =  int.Parse(GameManager._LifeSource.text);
+               
+                PlanetController Planet = hitColliders[i].gameObject.GetComponent<PlanetController>();
+                
+                Planet.planetText.text = Planet.i_LifePoints + "";
+                //i_PlayerLife =  int.Parse(GameManager._LifeSource.text);
                 if (!isEmitting)
                 {
-                    StartCoroutine(WaitWhileEmitting(planetText));
+                    StartCoroutine(WaitWhileEmitting(Planet.planetText));
                 }
             }
         }
@@ -134,9 +139,9 @@ public class BlackHoleController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyParts"))
         {
-            int totalLife = int.Parse(GameManager._LifeSource.text);
-            totalLife += 5;
-            GameManager._LifeSource.text = totalLife + "";
+            //int totalLife = int.Parse(GameManager._LifeSource.text);
+            //totalLife += 5;
+            //GameManager._LifeSource.text = totalLife + "";
             Destroy(other.gameObject);
         }
     }
@@ -144,7 +149,7 @@ public class BlackHoleController : MonoBehaviour
 
     #region Coroutines
 
-    IEnumerator WaitWhileEmitting(TextMeshProUGUI lifeText)
+    IEnumerator WaitWhileEmitting(TextMeshPro lifeText)
     {
         isEmitting = true;
         yield return new WaitForSeconds(0.1f);
@@ -153,7 +158,7 @@ public class BlackHoleController : MonoBehaviour
             i_PlanetLife += 5;
             i_PlayerLife -= 5;
         }
-        GameManager._LifeSource.text = i_PlayerLife.ToString();
+        //GameManager._LifeSource.text = i_PlayerLife.ToString();
         lifeText.text = i_PlanetLife.ToString();
         isEmitting = false;
     }

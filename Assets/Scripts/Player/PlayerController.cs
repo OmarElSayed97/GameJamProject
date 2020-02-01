@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using  UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -67,6 +68,11 @@ public class PlayerController : MonoBehaviour
     #region UIElements
     [SerializeField]
     private TextMeshProUGUI ui_LifeText;
+
+    [SerializeField]
+    Sprite[] l_sprite_AbilityIcons;
+    [SerializeField]
+    Image[] l_img_AbilityImages;
     #endregion
 
     #region Others
@@ -78,6 +84,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     Material mat_DissolveMaterial;
+
+    GeneralAudioManager AudioManager;
     #endregion
 
     #endregion
@@ -88,29 +96,29 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         BulletsPool.InitializePool();
-        ui_LifeText.text = 0 + "";
+        //ui_LifeText.text = 0 + "";
         l_Weapons = new Weapon[3];
         l_Weapons[0] = Weapon.LASER;
         l_Weapons[1] = Weapon.BLACKHOLE;
         l_Weapons[2] = Weapon.TELEPORT;
+
+        AudioManager = GetComponent<GeneralAudioManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (!EventSystem.current.IsPointerOverGameObject())
-        {
+       
             if(CurrentWeapon == Weapon.LASER)
                 Fire();
-            //TO BE CHANGED
-//            if (CurrentWeapon == Weapon.BLACKHOLE)
+            if(CurrentWeapon == Weapon.BLACKHOLE)
                 ReleaseBlackHole();
             if (CurrentWeapon == Weapon.TELEPORT)
                 Teleport();
 
             SwitchWeapon();
             NumberofEnemiesAroundPlayer();
-        }
+        
       
     }
     #endregion
@@ -120,18 +128,20 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            AudioManager.Play("Laser");
             BulletsPool.SpawnDoubleShoot(t_BulletSpawner1,t_BulletSpawner2, 3000);
-            StartCoroutine(ShakingCamera.Shake(0.2f, 0.05f));
+            StartCoroutine(ShakingCamera.Shake(0.2f, 0.07f));
         }
     }
 
     void ReleaseBlackHole()
     {
         //TO BE CHANGED
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             if (!go_InstantiatedBlackHole)
             {
+                AudioManager.Play("BlackHole");
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 if (Physics.Raycast(ray,out hit))
@@ -143,6 +153,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            GetComponent<AudioSource>().Stop();
             Destroy(go_InstantiatedBlackHole);
         }
     }
@@ -151,10 +162,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100,1))
+            if (Physics.Raycast(ray, out hit, 100,9))
             {
+                AudioManager.Play("Teleport");
                 Vector3 newPos = new Vector3(hit.point.x, hit.point.y + f_TeleportOffsetVertical, hit.point.z);
                 StartCoroutine(DissolveOut(newPos));
             }
@@ -194,7 +207,29 @@ public class PlayerController : MonoBehaviour
         if (IsSwitching)
         {
             CurrentWeapon = l_Weapons[i_CurrentWeaponIndex];
+            if (l_Weapons[i_CurrentWeaponIndex] == Weapon.LASER)
+            {
+                l_img_AbilityImages[1].sprite = l_sprite_AbilityIcons[0];
+                l_img_AbilityImages[0].sprite = l_sprite_AbilityIcons[2];
+                l_img_AbilityImages[2].sprite = l_sprite_AbilityIcons[1];
+
+            }
+            else if (l_Weapons[i_CurrentWeaponIndex] == Weapon.BLACKHOLE)
+            {
+                l_img_AbilityImages[1].sprite = l_sprite_AbilityIcons[1];
+                l_img_AbilityImages[0].sprite = l_sprite_AbilityIcons[0];
+                l_img_AbilityImages[2].sprite = l_sprite_AbilityIcons[2];
+
+            }
+            else
+            {
+                l_img_AbilityImages[1].sprite = l_sprite_AbilityIcons[2];
+                l_img_AbilityImages[0].sprite = l_sprite_AbilityIcons[1];
+                l_img_AbilityImages[2].sprite = l_sprite_AbilityIcons[0];
+
+            }
             IsSwitching = false;
+           
         }
     }
 

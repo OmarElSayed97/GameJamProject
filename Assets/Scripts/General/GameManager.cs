@@ -30,10 +30,10 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Public GameObjects
-    [SerializeField] 
-    private GameObject go_LifeSourceGO;
+    //[SerializeField] 
+    //private GameObject go_LifeSourceGO;
 
-    public static TextMeshProUGUI _LifeSource;
+    //public static TextMeshProUGUI _LifeSource;
     #endregion
 
     #region Private GameObjects
@@ -41,10 +41,11 @@ public class GameManager : MonoBehaviour
 
     #region UIElements
 
-    
+
     #endregion
 
     #region Others
+    GeneralAudioManager AudioManager;
     #endregion
 
     #endregion
@@ -54,8 +55,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _LifeSource = go_LifeSourceGO.GetComponent<TextMeshProUGUI>();
-        _LifeSource.text = 0 + "";
+       
+        AudioManager = GetComponent<GeneralAudioManager>();
+        AudioManager.Play("MainOst");
+        //_LifeSource = go_LifeSourceGO.GetComponent<TextMeshProUGUI>();
+        //_LifeSource.text = 0 + "";
     }
 
     // Update is called once per frame

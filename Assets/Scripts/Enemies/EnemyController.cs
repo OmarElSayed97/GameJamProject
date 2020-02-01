@@ -84,7 +84,7 @@ public class EnemyController : MonoBehaviour
         }
         if(i_BulletsTaken == 2)
         {
-            GameObject obj = Instantiate(go_LifeSource, transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(go_LifeSource, transform.position + new Vector3(0, 3f,0), Quaternion.identity);
             //agt_CurrentAgent.enabled = false;
             Destroy(gameObject);
         }

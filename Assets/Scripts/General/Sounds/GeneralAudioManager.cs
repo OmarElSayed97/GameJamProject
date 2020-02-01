@@ -7,9 +7,10 @@ public class GeneralAudioManager : MonoBehaviour
 
     public Sound[] sounds;
 
-
+    public static GeneralAudioManager Instance; 
     void Awake()
     {
+        Instance = new GeneralAudioManager();
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
