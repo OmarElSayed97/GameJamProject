@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Integers And Floats
+
+    [SerializeField] 
+    private float f_BlackholeOffset;
     #endregion
 
     #region Strings And Enums
@@ -30,9 +33,13 @@ public class PlayerController : MonoBehaviour
 
     #region Public GameObjects
 
+    [SerializeField] 
+    public GameObject go_BlackHole;
     #endregion
 
     #region Private GameObjects
+
+    private GameObject go_InstantiatedBlackHole;
     #endregion
 
     #region UIElements
@@ -63,6 +70,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Fire();
+        ReleaseBlackHole();
         if (Input.GetKeyDown(KeyCode.P))
         {
             StartCoroutine(Dissolve());
@@ -77,6 +85,27 @@ public class PlayerController : MonoBehaviour
         {
             BulletsPool.SpawnFromPool(t_BulletSpawner, 1000);
             StartCoroutine(ShakingCamera.Shake(0.2f, 0.05f));
+        }
+    }
+
+    void ReleaseBlackHole()
+    {
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            if (!go_InstantiatedBlackHole)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray,out hit))
+                {
+                    Vector3 newPos = new Vector3(hit.point.x, hit.point.y + f_BlackholeOffset, hit.point.z);
+                    go_InstantiatedBlackHole = Instantiate(go_BlackHole,newPos,Quaternion.identity);
+                }
+            }
+        }
+        else
+        {
+            Destroy(go_InstantiatedBlackHole);
         }
     }
 
@@ -96,6 +125,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Coroutines
+    
     #endregion
 
 
