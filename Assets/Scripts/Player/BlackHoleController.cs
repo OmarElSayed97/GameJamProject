@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BlackHoleController : MonoBehaviour
 {
@@ -76,9 +77,31 @@ public class BlackHoleController : MonoBehaviour
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            if (hitColliders[i].CompareTag("EnemyParts") || hitColliders[i].CompareTag("Enemy") )
+            if (hitColliders[i].CompareTag("Enemy") )
             {
+                NavMeshAgent enemyAgent = hitColliders[i].GetComponent<NavMeshAgent>();
+                string originalTag = hitColliders[i].tag;
+                hitColliders[i].tag = "EnemyAttracted";
+                enemyAgent.enabled = false;
                 
+                Transform part = hitColliders[i].transform;
+                part.position = Vector3.MoveTowards(part.position, transform.position, 2f * Time.deltaTime);
+                
+                hitColliders[i].tag = originalTag;
+                enemyAgent.enabled = true;
+
+                RaycastHit hit;
+                if (Physics.Raycast(hitColliders[i].transform.position , Vector3.down, out hit, 1f))
+                {
+                    if (hit.collider.name == "Plane")
+                    {
+                        hitColliders[i].GetComponent<Collider>().enabled = false;
+                        enemyAgent.enabled = false;
+                    }
+                }
+            }
+            else if (hitColliders[i].CompareTag("EnemyParts"))
+            {
                 Transform part = hitColliders[i].transform;
                 part.position = Vector3.MoveTowards(part.position, transform.position, 2f * Time.deltaTime);
             }

@@ -93,7 +93,7 @@ public class EnemySpawner : MonoBehaviour
         int RandomEnemy = Random.Range(0, l_go_EnemyPrefabs.Length);
         Vector3 EnemyPos = new Vector3(transform.localPosition.x + 3, transform.localPosition.y, transform.localPosition.z + RandomZ);
         GameObject NewEnemy = Instantiate(l_go_EnemyPrefabs[RandomEnemy], EnemyPos, new Quaternion(0,0,0,0));
-        NewEnemy.transform.SetParent(transform);
+        //NewEnemy.transform.SetParent(transform);
         NewEnemy.GetComponent<NavMeshAgent>().SetDestination(t_EnemyTarget.position);
         NewEnemy.GetComponent<EnemyController>().t_Target = t_EnemyTarget;
 

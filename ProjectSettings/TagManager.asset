@@ -7,6 +7,8 @@ TagManager:
   - Bullet
   - EnemyParts
   - Enemy
+  - EnemyAttracted
+  - Fall
   layers:
   - Default
   - TransparentFX
