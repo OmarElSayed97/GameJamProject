@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+
 using TMPro;
 using UnityEngine;
 
@@ -13,10 +13,11 @@ public class PlanetController : MonoBehaviour
 
     #region Booleans
     bool IsAbsorbing;
+    bool IsAlive;
     #endregion
 
     #region Vectors And Transforms
-
+    Vector3 rotation;
     #endregion
 
     #region Integers And Floats
@@ -53,16 +54,25 @@ public class PlanetController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rotation = new Vector3(0, 1, 0);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(i_LifePoints >= 100)
+        if (i_LifePoints >= 100 && !IsAlive)
         {
-           transform.GetChild(1).gameObject.GetComponent<MeshRenderer>().material = mat_LifeMaterial;
+            transform.GetChild(1).gameObject.GetComponent<MeshRenderer>().material = mat_LifeMaterial;
+            GameManager._PlanetsSurvived++;
+            IsAlive = true;
+
+        }
+
+
+        if (i_LifePoints>= 100)
+        {
+            transform.GetChild(2).Rotate(rotation);
         }
     }
     #endregion

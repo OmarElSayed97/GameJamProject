@@ -87,7 +87,9 @@ public class StoryTellerManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (i_CurrentScreen != StoryScreens.Length + 1)
+            
+            Debug.Log(i_CurrentScreen + " " + StoryScreens.Length);
+            if (i_CurrentScreen + 1 != StoryScreens.Length )
             {
                 i_CurrentScreen++;
                 img_CurrentImage.sprite = StoryScreens[i_CurrentScreen].storyImg;
@@ -96,7 +98,7 @@ public class StoryTellerManager : MonoBehaviour
             }
             else
             {
-                if (go_LoadingScreen != null && !go_LoadingScreen)
+                if (go_LoadingScreen != null || !go_LoadingScreen)
                     go_LoadingScreen.SetActive(true);
             }
         }

@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     #region Variables
 
     #region Booleans
-
+    bool IsStaying;
     #endregion
 
     #region Vectors And Transforms
@@ -85,15 +85,26 @@ public class EnemyController : MonoBehaviour
         if(i_BulletsTaken == 2)
         {
             GameObject obj = Instantiate(go_LifeSource, transform.position + new Vector3(0, 3f,0), Quaternion.identity);
-            //agt_CurrentAgent.enabled = false;
+            if (IsStaying)
+            {
+                PlayerController.i_EnemyHitting--;
+            }
             Destroy(gameObject);
+            IsStaying = false;
         }
+       
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+            IsStaying = true;
+    }
+
 
     #endregion
 
     #region Coroutines
 
-  
+
     #endregion
 }

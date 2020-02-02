@@ -26,14 +26,14 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Integers And Floats
-
+    public static int i_EnemyHitting = 0;
     [SerializeField] 
     private float f_BlackholeOffset;
 
     private float f_TeleportOffsetVertical;
 
     private int i_CurrentWeaponIndex;
-    private int i_EnemyHitting = 0;
+   
     #endregion
 
     #region Strings And Enums
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
                 Teleport();
 
             SwitchWeapon();
-            NumberofEnemiesAroundPlayer();
+            //NumberofEnemiesAroundPlayer();
         
       
     }
@@ -234,29 +234,55 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void NumberofEnemiesAroundPlayer()
-    {
-        Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale/2);
+    //void NumberofEnemiesAroundPlayer()
+    //{
+    //    Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale/2);
 
-        for (int i = 0; i < hitColliders.Length; i++)
-        {
-            if (hitColliders[i].CompareTag("Enemy"))
-            {
-                i_EnemyHitting++;
-            }
-        }
-        if (hitColliders.Length >= 3 && i_EnemyHitting >= 3)
-        {
-            gameObject.SetActive(false);
-        }
+    //    for (int i = 0; i < hitColliders.Length; i++)
+    //    {
+    //        if (hitColliders[i].CompareTag("Enemy"))
+    //        {
+    //            i_EnemyHitting++;
+    //        }
+    //    }
+    //    if (hitColliders.Length >= 3 && i_EnemyHitting >= 3)
+    //    {
+    //        gameObject.SetActive(false);
+    //    }
 
-        i_EnemyHitting = 0;
-    }
+    //    i_EnemyHitting = 0;
+    //}
 
     #endregion
 
     #region Collisons And Triggers
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            i_EnemyHitting++;
+            Debug.Log("EnemyHit");
+        }
 
+        if (i_EnemyHitting == 3)
+        {
+            gameObject.SetActive(false);
+            //ShowGameover
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+           i_EnemyHitting--;
+            Debug.Log("Enemy Left");
+        }
+    }
+
+   
     #endregion
 
     #region Coroutines

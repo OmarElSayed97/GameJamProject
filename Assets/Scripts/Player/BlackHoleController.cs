@@ -73,7 +73,7 @@ public class BlackHoleController : MonoBehaviour
     #region Methods
     private void AttractEnemies()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 8f);
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
@@ -144,7 +144,7 @@ public class BlackHoleController : MonoBehaviour
             }
             else
             {
-                
+               
                 GameManager._LifeSource += 5;
                 Destroy(other.gameObject);
             }
@@ -164,7 +164,6 @@ public class BlackHoleController : MonoBehaviour
             GameManager._LifeSource -= 5;
         }
         planet.planetText.text = planet.i_LifePoints + "%";
-        Debug.Log(planet.gameObject.name +"  " + planet.i_LifePoints);
         isEmitting = false;
     }
     #endregion

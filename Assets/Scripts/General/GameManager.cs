@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   
+
     #region Singleton
 
     #endregion
@@ -32,7 +32,14 @@ public class GameManager : MonoBehaviour
     #region Public GameObjects
     //[SerializeField] 
     //private GameObject go_LifeSourceGO;
+    [SerializeField]
+    private GameObject go_GameOverPanel;
 
+    [SerializeField]
+    private GameObject go_Player;
+
+
+    public static int _PlanetsSurvived;
     public static int _LifeSource;
     #endregion
 
@@ -64,7 +71,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(!go_Player.gameObject.activeSelf || go_Player.transform.position.y < -50)
+        {
+            go_GameOverPanel.SetActive(true);
+         
+        }
     }
     #endregion
 

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Master Scenes/MenuScene.unity
     guid: dbca90776fb3a5f4a83e19601be5e208
   - enabled: 1
+    path: Assets/Scenes/Master Scenes/StoryTeller1.unity
+    guid: 000b93a52dc892f4fb6f4a4baa5d42bd
+  - enabled: 1
     path: Assets/Scenes/Sandboxes/Omar.unity
     guid: a4aaeebdcbaa86044b14c8db8b1ba36c
   - enabled: 1
