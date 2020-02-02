@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     //[SerializeField] 
     //private GameObject go_LifeSourceGO;
 
-    //public static TextMeshProUGUI _LifeSource;
+    public static int _LifeSource;
     #endregion
 
     #region Private GameObjects
@@ -57,9 +57,8 @@ public class GameManager : MonoBehaviour
     {
        
         AudioManager = GetComponent<GeneralAudioManager>();
-        AudioManager.Play("MainOst");
-        //_LifeSource = go_LifeSourceGO.GetComponent<TextMeshProUGUI>();
-        //_LifeSource.text = 0 + "";
+        AudioManager.Play("MainOst");  
+        _LifeSource = 0;
     }
 
     // Update is called once per frame

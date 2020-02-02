@@ -42,6 +42,8 @@ public class PlanetController : MonoBehaviour
     #endregion
 
     #region Others
+    [SerializeField]
+    Material mat_LifeMaterial;
     #endregion
 
     #endregion
@@ -58,7 +60,10 @@ public class PlanetController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(i_LifePoints >= 100)
+        {
+           transform.GetChild(1).gameObject.GetComponent<MeshRenderer>().material = mat_LifeMaterial;
+        }
     }
     #endregion
 
